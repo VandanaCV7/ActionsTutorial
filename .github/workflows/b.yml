@@ -1,0 +1,13 @@
+name: Job-B
+
+on:
+  workflow_run:
+    workflows: [Job-A]
+    types: [completed]
+
+jobs:
+  job-b:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello from Job B
+        run: echo "Hello from Job B"
